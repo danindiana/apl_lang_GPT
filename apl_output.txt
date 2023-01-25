@@ -7,6 +7,60 @@ SYM ← '⍝' '⍞' '⍬' '⍳' '⎕' '⏐' '⏑' '⏒' '⏓' '⏔'
 '⏙' '⏚'
 
 
+{⍵∊⍨¨⍳⍴⍵}
+
+∇r←RecursiveFns fns
+  [1] fns ← ⊃fns 
+  [2] fns ← fns ∪ {⍵∊⍨¨⍳⍴⍵}
+  [3] r ← fns
+  [4] ¯1 ←⍴fns
+  [5] ∇ {⍵∊⍨¨⍳⍴⍵}
+  [6] fns ← fns ∪ {⍴⍴⍵}
+  [7] fns ← fns ∪ {⍳⍴⍵}
+  [8] fns ← fns ∪ {⊃⍵}
+  [9] fns ← fns ∪ {∊⍵}
+  [10] fns ← fns ∪ {⍴⍵}
+  [11] fns ← fns ∪ {∇r←RecursiveFns fns}
+  [12] r ← fns
+  [13] ¯1 ←⍴fns
+  [14] ∇
+∇
+RecursiveFns ⊂⊂⊂
+
+
+
+      ⍝ This program takes an input array of symbols and recursively outputs all
+      ⍝ the unique primitives in APL
+      prims ← {⍺ ⍵}
+      :If 0=≢⍵
+        :Return ⍺
+      :Else
+        :Return prims ∪ prims ⍵
+      prims ¯1↑⍵
+      prims ⍳⍵
+
+
+
+
+⍝ A program to output all unique primitives in the APL programming language
+
+⍝ Define a set of APL primitives
+primitives←'⍝' '⍺' '⍵' '⎕' '⍬' '⍣' '⍤' '⊥' '⊤' '⌽' '⊖' '⍋' '⍒' '⊂' '⊃' '⋄' '⍳' '⍴' '⍕' '⍎' '⍺⍺' '⍵⍵' '⍶' '⍹' '⍷'
+
+⍝ Output unique primitives
+⎕←⍉primitives
+
+
+⍝ Generate all functions, arrays, and assignments
+
+∇ fn ⍵;arr;asg;result
+  fn ← {⍵⍺⍵ ⍝ Generate all functions
+  arr ← {⍵⍴⍵ ⍝ Generate all arrays
+  asg ← {⍵←⍵ ⍝ Generate all assignments
+  result ← (fn;arr;asg) ⍝ Combine functions, arrays, and assignments into one result
+  ∇ result
+∇
+
 
 ⍝ List of Symbols in APL Programming Language
 
@@ -49,3 +103,22 @@ SYM ← '⍝' '⍞' '⍬' '⍳' '⎕' '⏐' '⏑' '⏒' '⏓' '⏔'
 ⍒       Grade Down
 ⍎       Execute
 ⍕       Format
+
+
+Write a python program which recursively ouputs all unique primitive functions in the apl programming language.
+
+
+
+def apl_functions(functions):
+    """Recursively outputs all unique primitive functions in the APL programming language"""
+    if len(functions) == 0:
+        return
+    else:
+        unique_func = functions.pop()
+        print(unique_func)
+        apl_functions(functions)
+ 
+ 
+primitive_functions = ["+", "-", "×", "÷", "|", "⍳", "⎕", "⍺", "⍵", "⍶", "⍹", "⍴", "∊", "∪", "∩", "↑", "↓", "⊢", "⊣", "⊤", "⊥", "⊣⊢", "⌹", "⍋", "⍒", "⌽", "⊆", "↑⍳", "⊂", "⊃", "⊆⊂", "⊆⊃", "⊃⊂", "⊃⊆", "⌷", "⍉", "≡", "≢", "⍎", "⍕", "⍺⍺", "⍵⍵", "⍸", "⍤", "⍥", "⍣", "⍞", "⎕A", "⎕U", "⎕C"]
+ 
+apl_functions(primitive_functions)
