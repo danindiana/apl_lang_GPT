@@ -5,3 +5,47 @@ SYM ← '⍝' '⍞' '⍬' '⍳' '⎕' '⏐' '⏑' '⏒' '⏓' '⏔'
 '⎕D' '⎕DL' '⎕F' '⎕IO' '⎕L' '⎕ML' '⎕N' '⎕NC' '⎕R'
 '⎕RL' '⎕S' '⎕V' '⏐' '⏑' '⏒' '⏓' '⏔' '⏕' '⏖' '⏗' '⏘'
 '⏙' '⏚'
+
+
+
+⍝ List of Symbols in APL Programming Language
+
+⍝ Arithmetic Operators
++       Addition
+-       Subtraction
+×       Multiplication
+÷       Division
+*       Exponentiation
+⌈       Maximum
+⌊       Minimum
+
+⍝ Comparison Operators
+<       Less Than
+>       Greater Than
+≤       Less Than or Equal To
+≥       Greater Than or Equal To
+=       Equality
+≠       Not Equal To
+≡       Identity
+
+⍝ Logical Operators
+∧       Logical And
+∨       Logical Or
+⍱       Logical Nor
+⍲       Logical Nand
+
+⍝ Assignment Operators
+←       Assignment
+
+⍝ Other Operators
+⍳       Index Generator
+⍴       Reshape
+⌽       Reverse 
+⊢       Reduce
+⊣       Expand
+⍉       Transpose
+⌹       Matrix Inverse
+⍋       Grade Up
+⍒       Grade Down
+⍎       Execute
+⍕       Format
